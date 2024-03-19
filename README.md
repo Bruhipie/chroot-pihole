@@ -3,6 +3,6 @@
 
 ## Credits
 [IvonBlogs](https://ivonblog.com/en-us/posts/termux-chroot-ubuntu/)
-    Almost all the code is made by him and i have just added some fix and removed desktop-environment part
+    Almost all the code was written by him and i have just added some fix and removed desktop-environment part
 
     

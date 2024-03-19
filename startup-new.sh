@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # The path of Ubuntu rootfs
-UBUNTUPATH="/data/local/tmp/chrootubuntu"
+UBUNTUPATH="/data/local/tmp/ubuntu"
 
 # Fix setuid issue
 busybox mount -o remount,dev,suid /data
