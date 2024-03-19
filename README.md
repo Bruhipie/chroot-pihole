@@ -1,2 +1,8 @@
 # chroot-pihole
-A simple shell script which installs Ubuntu and subsequently Pi-Hole on it using chroot
+> **NOTE:** This repository currently only sets up an Ubuntu chroot environment and doesn't install Pi-Hole (for now)
+
+## Credits
+[IvonBlogs](https://ivonblog.com/en-us/posts/termux-chroot-ubuntu/)
+    Almost all the code is made by him and i have just added some fix and removed desktop-environment part
+
+    
