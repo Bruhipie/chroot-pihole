@@ -9,12 +9,14 @@
 - [Magisk Busybox Module](https://github.com/Magisk-Modules-Alt-Repo/BuiltIn-BusyBox/releases)
 
 ## Installation
-1. Install termux and install git using:  
+1. Install [termux](https://github.com/termux/termux-app/releases) and install git using:  
+    `yes | pkg update && pkg install git`
+2. Clone this repo:  
     `git clone https://github.com/Bruhipie/chroot-pihole.git`
-2. Run the install.sh file inside the directory:  
+3. Run the install.sh file inside the directory:  
     `cd chroot-pihole && sh install.sh`
-3. Wait, you may have to provide some inputs.
-4. Profit.
+4. Wait, you may have to provide some inputs.
+5. Profit.
 
 ## To-Do
 1. Pi-Hole 
