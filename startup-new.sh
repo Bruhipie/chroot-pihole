@@ -2,6 +2,7 @@
 
 # The path of Ubuntu rootfs
 UBUNTUPATH="/data/local/tmp/ubuntu"
+mkdir /dev/shm
 
 # Fix setuid issue
 busybox mount -o remount,dev,suid /data
@@ -18,7 +19,7 @@ busybox mount -t tmpfs -o size=256M tmpfs $UBUNTUPATH/dev/shm
 busybox mount --bind /sdcard $UBUNTUPATH/sdcard
 
 # chroot into Ubuntu
-read -p "Enter your username: " username
+username=$(cd $UBUNTUPATH/home && ls)
 busybox chroot $UBUNTUPATH /bin/su - $username 
 
 # Umount everything after exiting the shell. Because the graphical environment will be installed later, they are commented. If you do not want to install a graphics environment, uncomment the following commands.

@@ -2,6 +2,7 @@
 
 # The path of Ubuntu rootfs
 UBUNTUPATH="/data/local/tmp/ubuntu"
+mkdir /dev/shm
 
 # Fix setuid issue
 busybox mount -o remount,dev,suid /data
