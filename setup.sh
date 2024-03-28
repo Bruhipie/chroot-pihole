@@ -16,7 +16,7 @@ sleep 10
 
 #Update Ubuntu rootfs and install common softwares
 yes | (apt update && apt upgrade)
-yes | apt install sudo git net-tools
+yes | apt install curl sudo git net-tools openssh-client openssh-server
 
 #Setup Timezone and user
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -30,6 +30,28 @@ useradd -m -g users -G wheel,audio,video,storage,aid_inet -s /bin/bash $username
 echo "$username:$pswd" | chpasswd
 echo "$username ALL=(ALL:ALL) ALL" | sudo tee -a /etc/sudoers
 
-#Going into user
-chmod 777 ssh-and-shit.sh
-su $username -c "bash ssh-and-shit.sh"
+#Generate locales
+apt install locales
+locale-gen en_US.UTF-8
+clear
+
+#Change root password
+printf "Changing password for root user\n"
+read -sp "Enter password for root: " rootpaswd
+echo "root:$rootpaswd" | chpasswd
+
+#Disable snap beacuse it's Android
+apt-get autopurge snapd
+
+cat <<EOF | sudo tee /etc/apt/preferences.d/nosnap.pref
+# To prevent repository packages from triggering the installation of Snap,
+# this file forbids snapd from being installed by APT.
+# For more information: https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF
+
+su $username -c "ssh-keygen"
+echo "Installation is complete!"
+echo -e "Run "sh startup.sh" from /data/local/tmp directory"
