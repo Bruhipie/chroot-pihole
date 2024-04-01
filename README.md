@@ -17,8 +17,7 @@
 5. Profit.
 
 ## To-Do
-1. Pi-Hole 
-2. Desktop Environment with VS-Code
+1. Desktop Environment with VS-Code
 
 ## Credits
 - [IvonBlogs](https://ivonblog.com/en-us/posts/termux-chroot-ubuntu/) :-
