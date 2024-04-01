@@ -14,7 +14,7 @@
 2. Clone this repo:  
     `git clone https://github.com/Bruhipie/chroot-pihole.git`
 3. Run the install.sh file inside the directory:  
-    `cd chroot-pihole && sh install.sh`
+    `cd chroot-pihole && su -c "sh install.sh"`
 4. Wait, you may have to provide some inputs.
 5. Profit.
 
