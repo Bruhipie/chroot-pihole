@@ -1,7 +1,5 @@
 # chroot-pihole
-> **NOTE:** This repository currently only sets up an Ubuntu chroot environment and doesn't install Pi-Hole (for now)  
-
-> **ANOTHER NOTE**: This is not an un-attended installation, you have to provide some inputs.
+> **NOTE**: This is not an un-attended installation, you have to provide some inputs.
 
 ## Requirements
 - A rooted Android Device
