@@ -21,7 +21,7 @@ busybox mount --bind /sdcard $UBUNTUPATH/sdcard
 # chroot into Ubuntu
 busybox chroot $UBUNTUPATH /bin/su - root -c "bash setup.sh"
 
-# Umount everything after exiting the shell. Because the graphical environment will be installed later, they are commented. If you do not want to install a graphics environment, uncomment the following commands.
+# Umount everything after exiting the shell. Because the graphical environment will be installed later, they are commented.
 busybox umount $UBUNTUPATH/dev/shm
 busybox umount $UBUNTUPATH/dev/pts
 busybox umount $UBUNTUPATH/dev

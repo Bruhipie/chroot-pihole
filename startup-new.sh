@@ -19,10 +19,10 @@ busybox mount -t tmpfs -o size=256M tmpfs $UBUNTUPATH/dev/shm
 busybox mount --bind /sdcard $UBUNTUPATH/sdcard
 
 # chroot into Ubuntu
-username=$(cd $UBUNTUPATH/home && ls)
-busybox chroot $UBUNTUPATH /bin/su - $username 
+export username=$(cd $UBUNTUPATH/home && ls)
+busybox chroot $UBUNTUPATH /bin/su - root -c "service lighttpd start && service ssh start && su $username && service pihole-FTL stop && service lighttpd stop && service ssh stop"
 
-# Umount everything after exiting the shell. Because the graphical environment will be installed later, they are commented. If you do not want to install a graphics environment, uncomment the following commands.
+# Umount everything after exiting the shell. Because the graphical environment will be installed later, they are commented.
 busybox umount $UBUNTUPATH/dev/shm
 busybox umount $UBUNTUPATH/dev/pts
 busybox umount $UBUNTUPATH/dev
